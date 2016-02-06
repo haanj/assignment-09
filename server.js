@@ -16,14 +16,17 @@ app.get('/articles', function(req, res) {
 
 models.sequelize.sync({force: true}).then(function(x) {
   models.Article.create({
-    name: 'meow',
-    age: 2
+    title: 'testtitle',
+    category: 'testcategory',
+    author: 'testauthor',
+    authorUrl: 'testauthorurl',
+    publishedOn: 'testpublish',
+    body: 'testbody'
   })
 })
 
-
 app.listen(PORT, function() {
-console.log('server started')
-console.log('listening on PORT: ' + PORT)
-console.log('DB URI STRING: ' + DB)
+  console.log('server started')
+  console.log('listening on PORT: ' + PORT)
+  console.log('DB URI STRING: ' + DB)
 })
