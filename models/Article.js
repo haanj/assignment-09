@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     author: DataTypes.STRING,
     authorUrl: DataTypes.STRING,
     publishedOn: DataTypes.STRING,
-    body: DataTypes.STRING
+    body: DataTypes.TEXT
   })
   return Article;
 }
