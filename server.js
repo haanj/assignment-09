@@ -16,16 +16,6 @@ app.get('/articles', function(req, res) {
 
 
 models.sequelize.sync({force: true}).then(function(x) {
-  /*
-  models.Article.create({
-    title: 'testtitle',
-    category: 'testcategory',
-    author: 'testauthor',
-    authorUrl: 'testauthorurl',
-    publishedOn: 'testpublish',
-    body: 'testbody'
-  })
-  */
   parsedArticles.forEach(function(article) {
     models.Article.create({
       title: article.title,
@@ -38,14 +28,6 @@ models.sequelize.sync({force: true}).then(function(x) {
   })
 })
 
-fetchAll = function(next) {
-    console.log('fetching...');
-
-    $.getJSON('data/hackerIpsum.json', function(rawData) {
-      // Cache the json, so we don't need to request it next time:
-
-      });
-  };
 
 app.listen(PORT, function() {
   console.log('server started')
